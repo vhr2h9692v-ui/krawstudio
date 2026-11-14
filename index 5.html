@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>KRAW STUDIO – İşletmen için web sitesi</title>
+<meta name="description" content="Web sitesi kurulumu, ürün tanıtımı, logo ve QR kod tasarımı. Siparişini WhatsApp’tan ver, %20 indirimle başla.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="tr_TR">
+<meta property="og:title" content="KRAW STUDIO | İşletmen internette hazır">
+<meta property="og:description" content="Web sitesi, ürün tanıtımı ve tasarım. Tüm siparişlerde %20 indirim.">
+<meta property="og:url" content="https://bakim-plus.vercel.app">
+<meta name="theme-color" content="#07080c">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2307080c'/%3E%3Ccircle cx='32' cy='32' r='14' fill='none' stroke='%23b6ff3c' stroke-width='6'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#07080c;--surface:#10121a;--ink:#f2f4fa;--muted:#8e94a8;--line:#222638;--accent:#b6ff3c;--on-accent:#07080c;--wa:#25d366;--on-wa:#04140a;--o1:rgba(91,107,255,.35);--o2:rgba(182,255,60,.16);
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){--bg:#f3f4ef;--surface:#fff;--ink:#0b0d12;--muted:#5c6270;--line:#d9dccf;--accent:#3a4dff;--on-accent:#fff;--o1:rgba(58,77,255,.18);--o2:rgba(120,200,60,.2)}}
+:root[data-theme="light"]{--bg:#f3f4ef;--surface:#fff;--ink:#0b0d12;--muted:#5c6270;--line:#d9dccf;--accent:#3a4dff;--on-accent:#fff;--o1:rgba(58,77,255,.18);--o2:rgba(120,200,60,.2)}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 'Inter',system-ui,sans-serif;overflow-x:hidden}
+h1,h2,h3{font-family:'Space Grotesk','Inter',system-ui,sans-serif;line-height:1;margin:0;letter-spacing:-.03em}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+header{display:flex;justify-content:space-between;align-items:center;padding:24px 0;animation:fadeIn .9s ease 4.4s both}
+.logo{display:flex;gap:8px;align-items:baseline;text-decoration:none;font:700 20px 'Space Grotesk',sans-serif;letter-spacing:.06em}
+.logo b{color:var(--accent);font-weight:500}
+.btn{display:inline-block;border:1.5px solid var(--accent);border-radius:999px;padding:14px 26px;font:700 15px 'Inter',sans-serif;text-decoration:none;cursor:pointer;background:var(--accent);color:var(--on-accent);transition:transform .25s,box-shadow .25s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 30px -8px var(--accent)}
+.btn.wa{background:var(--wa);border-color:var(--wa);color:var(--on-wa)}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+.btn.ghost:hover{border-color:var(--accent);box-shadow:none}
+.hero{padding:80px 0 90px}
+.hero h1{font-size:clamp(50px,12vw,138px);font-weight:700;line-height:.93;max-width:10ch;animation:heroIn 1.1s cubic-bezier(.2,.8,.2,1) 4.2s both}
+.hero h1 em{font-style:normal;background:linear-gradient(90deg,var(--accent),#7d8bff);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{max-width:44ch;color:var(--muted);font-size:20px;margin:30px 0 36px;animation:heroIn 1.1s cubic-bezier(.2,.8,.2,1) 4.45s both}
+.row{display:flex;flex-wrap:wrap;gap:12px;animation:heroIn 1.1s cubic-bezier(.2,.8,.2,1) 4.7s both}
+@keyframes heroIn{from{opacity:0;transform:translateY(44px);filter:blur(10px)}to{opacity:1;transform:none;filter:none}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.marquee{overflow:hidden;border-block:1px solid var(--line);padding:20px 0}
+.marquee div{display:flex;gap:44px;width:max-content;animation:mq 30s linear infinite;font:700 clamp(24px,4.5vw,44px)/1 'Space Grotesk',sans-serif;text-transform:uppercase;color:transparent;-webkit-text-stroke:1px var(--muted);white-space:nowrap}
+@keyframes mq{to{transform:translateX(-50%)}}
+section{padding:90px 0}
+section>.wrap>h2{font-size:clamp(34px,6.5vw,68px);font-weight:700;margin-bottom:16px}
+.lead{color:var(--muted);max-width:52ch;margin:0 0 44px;font-size:19px}
+.services{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.services div{padding:30px;border:1px solid var(--line);border-radius:22px;background:var(--surface)}
+.services h3{font-size:26px;margin-bottom:12px}
+.services p{margin:0;color:var(--muted)}
+.plans{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.plan{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:30px;display:flex;flex-direction:column;transition:transform .3s,border-color .3s}
+.plan:hover{transform:translateY(-5px);border-color:var(--accent)}
+.plan.best{border-color:var(--accent);box-shadow:0 24px 70px -30px color-mix(in srgb,var(--accent) 55%,transparent)}
+.plan h3{font-size:28px}
+.plan .price{font:700 48px 'Space Grotesk',sans-serif;letter-spacing:-.04em;margin:14px 0 4px}
+.plan small{color:var(--muted)}
+.plan ul{list-style:none;padding:0;margin:20px 0 26px;flex:1}
+.plan li{padding:10px 0;border-top:1px solid var(--line);font-size:16px}
+.plan li.no{color:var(--muted);text-decoration:line-through}
+.plan .btn{text-align:center}
+.grp{font-size:32px;margin:56px 0 8px}
+.note{color:var(--muted);font-size:15px;margin:0 0 20px}
+details{border-top:1px solid var(--line);padding:18px 0;max-width:720px}
+summary{font-weight:700;cursor:pointer}
+details p{color:var(--muted);margin:10px 0 0;max-width:60ch}
+form{background:var(--surface);border:1px solid var(--line);border-radius:24px;padding:30px;display:grid;gap:24px;max-width:720px}
+fieldset{border:0;padding:0;margin:0;display:grid;gap:10px}
+legend{font-weight:700;margin-bottom:10px;font-family:'Space Grotesk',sans-serif;font-size:20px}
+.opt{display:flex;gap:12px;align-items:center;padding:13px 16px;border:1.5px solid var(--line);border-radius:14px;cursor:pointer;transition:border-color .2s}
+.opt:has(input:checked){border-color:var(--accent)}
+.opt input{accent-color:var(--accent);width:20px;height:20px;margin:0}
+.opt b{margin-left:auto;white-space:nowrap}
+label.f{display:grid;gap:6px;font-weight:700}
+input[type=text],textarea{font:400 17px 'Inter',sans-serif;padding:14px 16px;border:1.5px solid var(--line);border-radius:14px;background:var(--bg);color:var(--ink);width:100%}
+.summary{color:var(--muted);margin:0}
+footer{background:var(--surface);border-top:1px solid var(--line);padding:70px 0 calc(70px + env(safe-area-inset-bottom,0px))}
+footer h2{font-size:clamp(32px,6vw,56px);font-weight:700;margin-bottom:10px}
+footer p{margin:0 0 24px;color:var(--muted)}
+.num{font:700 clamp(30px,7vw,56px) 'Space Grotesk',sans-serif;text-decoration:none;display:block;margin-bottom:22px;color:var(--accent)}
+.qr{display:flex;gap:22px;align-items:center;margin-top:52px;padding-top:34px;border-top:1px solid var(--line)}.qr svg{width:148px;height:148px;flex:none;border-radius:14px;border:6px solid #fff;background:#fff}.qr h3{font-size:26px;margin-bottom:6px}.qr p{margin:0;color:var(--muted)}
+.fab{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:5;padding:14px 20px;box-shadow:0 8px 24px rgba(0,0,0,.4)}
+.promo{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 14px;padding:11px 18px;background:var(--accent);color:var(--on-accent);font-weight:700;font-size:15px;text-align:center;animation:fadeIn .8s ease 4.5s both}
+.bg{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden;animation:fadeIn 1.6s ease 4.2s both}
+.bg i{position:absolute;border-radius:50%;filter:blur(100px);animation:drift 24s ease-in-out infinite alternate}
+.bg i:nth-child(1){width:50vmax;height:50vmax;top:-22vmax;right:-16vmax;background:var(--o1)}
+.bg i:nth-child(2){width:42vmax;height:42vmax;bottom:-20vmax;left:-18vmax;background:var(--o2);animation-duration:30s;animation-delay:-9s}
+@keyframes drift{to{transform:translate3d(-7vmax,6vmax,0) scale(1.15)}}
+.intro{position:fixed;inset:0;z-index:100;overflow:hidden;color:#f2f4fa;display:grid;place-items:center;animation:gone .01s linear 5.1s forwards,free .01s linear 3.6s forwards}
+@keyframes gone{to{visibility:hidden}}
+@keyframes free{to{pointer-events:none}}
+.half{position:absolute;left:0;right:0;height:50.3%;background:#05060a;z-index:1}
+.half.t{top:0;animation:openT 1.1s cubic-bezier(.76,0,.24,1) 3.9s forwards}
+.half.b{bottom:0;animation:openB 1.1s cubic-bezier(.76,0,.24,1) 3.9s forwards}
+@keyframes openT{to{transform:translateY(-101%)}}
+@keyframes openB{to{transform:translateY(101%)}}
+.glow{position:absolute;left:50%;top:50%;width:80vmax;height:80vmax;margin:-40vmax;border-radius:50%;background:radial-gradient(circle,rgba(91,107,255,.5),rgba(182,255,60,.14) 40%,transparent 68%);z-index:2;opacity:0;animation:bloom 3.6s ease .5s forwards}
+@keyframes bloom{0%{opacity:0;transform:scale(.25)}30%{opacity:1;transform:scale(1)}85%{opacity:1}100%{opacity:0;transform:scale(1.5)}}
+.rings{position:absolute;inset:0;z-index:3}
+.rings i{position:absolute;left:50%;top:50%;width:30vmin;height:30vmin;margin:-15vmin;border-radius:50%;border:1px solid rgba(182,255,60,.6);opacity:0;animation:ring 2.2s cubic-bezier(.2,.7,.2,1) forwards}
+.rings i:nth-child(1){animation-delay:1.1s}.rings i:nth-child(2){animation-delay:1.5s}.rings i:nth-child(3){animation-delay:1.9s}
+@keyframes ring{0%{opacity:.9;transform:scale(.2)}100%{opacity:0;transform:scale(4.2)}}
+.seam{position:absolute;left:0;right:0;top:50%;height:1px;background:linear-gradient(90deg,transparent,#fff 20%,#fff 80%,transparent);z-index:4;transform:scaleX(0);animation:seam 4.1s linear .2s forwards}
+@keyframes seam{0%{transform:scaleX(0);opacity:1}20%{transform:scaleX(1)}92%{transform:scaleX(1);opacity:1}100%{transform:scaleX(1);opacity:0}}
+.word{position:relative;z-index:5;display:flex;font:700 clamp(38px,12.5vw,150px)/1 'Space Grotesk',sans-serif;letter-spacing:-.02em;padding:0 10px;animation:wordOut .9s cubic-bezier(.7,0,.8,.2) 3.7s forwards}
+@keyframes wordOut{to{transform:scale(1.35);opacity:0;filter:blur(12px)}}
+.word span{display:inline-block;opacity:0;transform:translateY(70%) scale(1.15);filter:blur(16px);background:linear-gradient(100deg,#f2f4fa 42%,#b6ff3c 50%,#f2f4fa 58%);background-size:300% 100%;background-position:100% 0;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;animation:letterIn 1s cubic-bezier(.2,.9,.2,1) calc(.7s + var(--i)*70ms) forwards,shine 1.2s ease calc(2.2s + var(--i)*70ms) forwards}
+@keyframes letterIn{to{opacity:1;transform:none;filter:blur(0)}}
+@keyframes shine{to{background-position:0 0}}
+.count{position:absolute;right:22px;bottom:calc(22px + env(safe-area-inset-bottom,0px));z-index:5;font:500 14px 'Space Grotesk',sans-serif;letter-spacing:.2em;opacity:0;animation:soft 3.7s linear .1s forwards}
+.count b{font-size:46px;font-weight:700;letter-spacing:-.03em}
+.tag{position:absolute;left:22px;bottom:calc(30px + env(safe-area-inset-bottom,0px));z-index:5;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:#8e94a8;opacity:0;animation:soft 2.2s linear 1.5s forwards}
+@keyframes soft{0%{opacity:0}12%{opacity:1}88%{opacity:1}100%{opacity:0}}
+@media (max-width:640px){.hero{padding-top:50px}}
+@media (prefers-reduced-motion:reduce){.intro{display:none}header,.hero h1,.hero p,.row,.promo,.bg,.bg i,.marquee div{animation:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="bg" aria-hidden="true"><i></i><i></i></div>
+<div class="intro" aria-hidden="true"><div class="half t"></div><div class="half b"></div><div class="glow"></div><div class="rings"><i></i><i></i><i></i></div><div class="seam"></div>
+<div class="word"><span style="--i:0">K</span><span style="--i:1">R</span><span style="--i:2">A</span><span style="--i:3">W</span><span style="--i:4">&nbsp;</span><span style="--i:5">S</span><span style="--i:6">T</span><span style="--i:7">U</span><span style="--i:8">D</span><span style="--i:9">I</span><span style="--i:10">O</span></div>
+<div class="tag">Web sitesi / Ürün tanıtımı / Tasarım</div><div class="count"><b id="cnt">0</b>%</div></div>
+<div class="promo"><span>Tüm siparişlerde %20 indirim</span><a href="#siparis">Sipariş ver</a></div>
+<div class="wrap">
+<header>
+<a class="logo" href="#top" aria-label="KRAW STUDIO">KRAW <b>STUDIO</b></a>
+<a class="btn wa" href="https://wa.me/905521474311" target="_blank" rel="noopener">WhatsApp</a>
+</header>
+<div class="hero" id="top">
+<h1>İşletmen <em>internette</em> hazır.</h1>
+<p>Site kurulumu, ürün tanıtımı ve tasarım. Paketini seç, siparişin WhatsApp’tan bize ulaşsın.</p>
+<div class="row"><a class="btn" href="#siparis">Sipariş ver</a><a class="btn ghost" href="#paketler">Paketleri gör</a></div>
+</div>
+</div>
+
+<div class="marquee" aria-hidden="true"><div><span>Site kurulumu</span><span>/</span><span>Ürün tanıtımı</span><span>/</span><span>Logo ve tasarım</span><span>/</span><span>Site kurulumu</span><span>/</span><span>Ürün tanıtımı</span><span>/</span><span>Logo ve tasarım</span><span>/</span></div></div>
+
+<section id="hizmetler"><div class="wrap">
+<h2>Yaptığımız işler</h2>
+<p class="lead">Instagram’dan başlayan işletmeni, müşterinin kolayca ulaşıp sipariş verebileceği bir yere taşıyoruz.</p>
+<div class="services">
+<div><h3>Site kurulumu</h3><p>Menü, galeri ve iletişim bilgilerinle telefonda hızlı açılan bir web sitesi.</p></div>
+<div><h3>Ürün tanıtımı</h3><p>Ürünlerini fotoğraf ve açıklamalarla düzenli şekilde sergiliyoruz.</p></div>
+<div><h3>Logo ve tasarım</h3><p>Logo ve QR kod gibi görselleri işletmene özel hazırlıyoruz.</p></div>
+</div>
+</div></section>
+
+<section id="paketler"><div class="wrap">
+<h2>Paketler</h2>
+<p class="lead">İhtiyacına göre üç seçenek. Fiyatlar tek seferlik site kurulum ücretidir.</p>
+<div class="plans">
+<article class="plan"><h3>Tek sayfa</h3><div class="price">3.000 TL</div><small>Küçük işletmeler için</small>
+<ul><li>Menü</li><li>Galeri</li><li>WhatsApp butonu</li><li class="no">Özel animasyon</li><li>Temel tasarım</li></ul>
+<a class="btn ghost" href="#siparis" data-pick="tek">Bunu seç</a></article>
+<article class="plan best"><h3>Standart</h3><div class="price">4.000 TL</div><small>En çok tercih edilen</small>
+<ul><li>Menü</li><li>Galeri</li><li>WhatsApp butonu</li><li class="no">Özel animasyon</li><li>Temel SEO</li><li>Orta seviye tasarım</li></ul>
+<a class="btn" href="#siparis" data-pick="standart">Bunu seç</a></article>
+<article class="plan"><h3>Profesyonel</h3><div class="price">4.500 TL</div><small>Tam kapsamlı</small>
+<ul><li>Gelişmiş menü</li><li>Galeri</li><li>WhatsApp butonu</li><li>Özel animasyon</li><li>Temel+ SEO</li><li>Gelişmiş tasarım</li></ul>
+<a class="btn ghost" href="#siparis" data-pick="pro">Bunu seç</a></article>
+</div>
+</div></section>
+
+<section id="tanitim"><div class="wrap">
+<h2>Ürün, tasarım ve bakım</h2>
+<p class="lead">Ürünlerini sergileyen, görsellerini hazırlayan ve siteni güncel tutan paketler.</p>
+<h3 class="grp">Ürün tanıtımı</h3>
+<p class="note">Fotoğraf düzenleme, ürün açıklaması ve sitede vitrin hazırlığı dahildir.</p>
+<div class="plans">
+<article class="plan"><h3>1 ürün</h3><div class="price">500 TL</div><small>Tek ürün için</small><ul><li>1 ürün sayfası</li><li>Fotoğraf düzenleme</li><li>Ürün açıklaması</li></ul><a class="btn ghost" href="#siparis" data-ek="u1">Bunu seç</a></article>
+<article class="plan"><h3>2 ürün</h3><div class="price">750 TL</div><small>İki ürün için</small><ul><li>2 ürün sayfası</li><li>Fotoğraf düzenleme</li><li>Ürün açıklamaları</li></ul><a class="btn ghost" href="#siparis" data-ek="u2">Bunu seç</a></article>
+<article class="plan best"><h3>3 ürün</h3><div class="price">1.000 TL</div><small>En çok tercih edilen</small><ul><li>3 ürün sayfası</li><li>Fotoğraf düzenleme</li><li>Ürün açıklamaları</li></ul><a class="btn" href="#siparis" data-ek="u3">Bunu seç</a></article>
+</div>
+<h3 class="grp">Tasarım</h3>
+<p class="note">Logo ve QR kod gibi hazır dosyalar teslim edilir.</p>
+<div class="plans">
+<article class="plan"><h3>QR kod</h3><div class="price">600 TL</div><small>Menü ya da site için</small><ul><li>İşletmene özel QR kod</li><li>Yüksek kaliteli PNG dosya</li><li>Menü, site ya da WhatsApp’a yönlendirme</li></ul><a class="btn ghost" href="#siparis" data-ek="t1">Bunu seç</a></article>
+<article class="plan"><h3>Logo</h3><div class="price">800 TL</div><small>Logo ve profil görseli</small><ul><li>Özel logo tasarımı</li><li>Instagram profil fotoğrafıyla uyumlu</li><li>PNG ve SVG dosyalar</li></ul><a class="btn ghost" href="#siparis" data-ek="t3">Bunu seç</a></article>
+</div>
+<h3 class="grp">Aylık bakım</h3>
+<p class="note">Fiyat, ürün ya da görsel değiştiğinde sitene yazman yeterli, biz güncelleriz.</p>
+<div class="plans">
+<article class="plan best"><h3>Site bakımı</h3><div class="price">500 TL</div><small>Aylık</small><ul><li>Ayda 2 güncelleme</li><li>Fiyat, ürün ve görsel değişikliği</li><li>Öncelikli dönüş</li></ul><a class="btn" href="#siparis" data-ek="b1">Bunu seç</a></article>
+</div>
+</div></section>
+
+<section id="surec"><div class="wrap">
+<h2>Nasıl ilerliyoruz?</h2>
+<p class="lead">Üç adımda siteni teslim alıyorsun.</p>
+<div class="services">
+<div><h3>1. Siparişini yaz</h3><p>Formu doldur, WhatsApp’tan bize ulaşsın. Detayları orada konuşuruz.</p></div>
+<div><h3>2. Biz hazırlarız</h3><p>Logon, ürünlerin ve bilgilerinle siteni kuruyoruz. Taslağı sana gösteriyoruz.</p></div>
+<div><h3>3. Yayına alırız</h3><p>Ödemen tamamlandıktan sonra siten yayına girer. Müşterilerin sana WhatsApp’tan ulaşır.</p></div>
+</div>
+<h3 class="grp">Sık sorulanlar</h3>
+<details><summary>Teslim ne kadar sürer?</summary><p>Siten ödemenden sonra 3–4 gün içinde teslim edilir. Ürün tanıtımı, logo ve QR kod gibi ek hizmetler de bu süre içinde hazırlanır.</p></details>
+<details><summary>Ödeme nasıl ve ne zaman yapılır?</summary><p>Ödeme havale/EFT ile, site tesliminden önce yapılır. Siparişin WhatsApp’ta onaylandıktan sonra IBAN bilgisini sana iletiriz; dekontu paylaştığında çalışmaya başlarız. Sitemiz kopyalanma ihtimaline karşı bu önlem alınmıştır.</p></details>
+<details><summary>Alan adı (.com) fiyata dahil mi?</summary><p>Alan adı ve barındırma ücreti ayrıdır. İstersen senin adına biz alırız.</p></details>
+<details><summary>Ürünüme zam gelirse fiyatı kim değiştirir?</summary><p>Bakım paketindeysen bize WhatsApp’tan yazman yeterli, fiyatı biz güncelleriz.</p></details>
+<details><summary>Sipariş verince ne olur?</summary><p>Mesajın WhatsApp’ta bize ulaşır. Aynı gün dönüş yapıp ihtiyacını netleştiririz.</p></details>
+</div></section>
+
+<section id="siparis"><div class="wrap">
+<h2>Sipariş ver</h2>
+<p class="lead">Formu doldur, butona bas. WhatsApp’ta siparişin hazır mesaj olarak açılır.</p>
+<form id="f" onsubmit="return false">
+<fieldset><legend>Paket</legend>
+<label class="opt"><input type="radio" name="paket" value="Tek sayfa (3.000 TL)" id="r-tek">Tek sayfa<b>3.000 TL</b></label>
+<label class="opt"><input type="radio" name="paket" value="Standart (4.000 TL)" id="r-standart" checked>Standart<b>4.000 TL</b></label>
+<label class="opt"><input type="radio" name="paket" value="Profesyonel (4.500 TL)" id="r-pro">Profesyonel<b>4.500 TL</b></label>
+</fieldset>
+<fieldset><legend>Ürün tanıtımı</legend>
+<label class="opt"><input type="radio" class="ek" name="urun" value="" data-p="0" id="u0" checked>İstemiyorum</label>
+<label class="opt"><input type="radio" class="ek" name="urun" value="Ürün tanıtımı: 1 ürün (500 TL)" data-p="500" id="u1">1 ürün<b>500 TL</b></label>
+<label class="opt"><input type="radio" class="ek" name="urun" value="Ürün tanıtımı: 2 ürün (750 TL)" data-p="750" id="u2">2 ürün<b>750 TL</b></label>
+<label class="opt"><input type="radio" class="ek" name="urun" value="Ürün tanıtımı: 3 ürün (1.000 TL)" data-p="1000" id="u3">3 ürün<b>1.000 TL</b></label>
+</fieldset>
+<fieldset><legend>Tasarım (istediklerini seç, hepsini de seçebilirsin)</legend>
+<label class="opt"><input type="checkbox" class="ek" name="tasarim" value="Tasarım: QR kod (600 TL)" data-p="600" id="t1">QR kod<b>600 TL</b></label>
+<label class="opt"><input type="checkbox" class="ek" name="tasarim" value="Tasarım: Logo (800 TL)" data-p="800" id="t3">Logo<b>800 TL</b></label>
+</fieldset>
+<fieldset><legend>Aylık bakım</legend>
+<label class="opt"><input type="radio" class="ek" name="bakim" value="" data-p="0" id="b0" checked>İstemiyorum</label>
+<label class="opt"><input type="radio" class="ek" name="bakim" value="Bakım: Site bakımı (500 TL/ay)" data-p="500" id="b1">Site bakımı<b>500 TL/ay</b></label>
+</fieldset>
+<label class="f">Adın<input type="text" id="ad" autocomplete="name"></label>
+<label class="f">İşletme adı<input type="text" id="isletme"></label>
+<label class="f">Notun (isteğe bağlı)<textarea id="not" rows="3"></textarea></label>
+<p class="summary" id="sum"></p>
+<a class="btn wa" id="send" href="#" target="_blank" rel="noopener">WhatsApp’tan siparişi gönder</a>
+</form>
+</div></section>
+
+<footer><div class="wrap">
+<h2>Sorun mu var? Yaz bize.</h2>
+<p>Siparişini WhatsApp’tan hızlıca alıyoruz.</p>
+<a class="num" href="https://wa.me/905521474311" target="_blank" rel="noopener">0 552 147 43 11</a>
+<a class="btn wa" href="https://wa.me/905521474311?text=Merhaba%2C%20web%20sitesi%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener">WhatsApp ile yaz</a>
+<div class="qr"><svg viewBox="0 0 41 41" role="img" aria-label="Siteyi açan QR kod" shape-rendering="crispEdges"><rect width="100%" height="100%" fill="#fff"/><path d="M4 4h1v1h-1zM5 4h1v1h-1zM6 4h1v1h-1zM7 4h1v1h-1zM8 4h1v1h-1zM9 4h1v1h-1zM10 4h1v1h-1zM12 4h1v1h-1zM14 4h1v1h-1zM15 4h1v1h-1zM18 4h1v1h-1zM19 4h1v1h-1zM20 4h1v1h-1zM21 4h1v1h-1zM27 4h1v1h-1zM30 4h1v1h-1zM31 4h1v1h-1zM32 4h1v1h-1zM33 4h1v1h-1zM34 4h1v1h-1zM35 4h1v1h-1zM36 4h1v1h-1zM4 5h1v1h-1zM10 5h1v1h-1zM15 5h1v1h-1zM16 5h1v1h-1zM20 5h1v1h-1zM21 5h1v1h-1zM23 5h1v1h-1zM28 5h1v1h-1zM30 5h1v1h-1zM36 5h1v1h-1zM4 6h1v1h-1zM6 6h1v1h-1zM7 6h1v1h-1zM8 6h1v1h-1zM10 6h1v1h-1zM14 6h1v1h-1zM16 6h1v1h-1zM17 6h1v1h-1zM20 6h1v1h-1zM25 6h1v1h-1zM26 6h1v1h-1zM27 6h1v1h-1zM28 6h1v1h-1zM30 6h1v1h-1zM32 6h1v1h-1zM33 6h1v1h-1zM34 6h1v1h-1zM36 6h1v1h-1zM4 7h1v1h-1zM6 7h1v1h-1zM7 7h1v1h-1zM8 7h1v1h-1zM10 7h1v1h-1zM12 7h1v1h-1zM13 7h1v1h-1zM14 7h1v1h-1zM15 7h1v1h-1zM16 7h1v1h-1zM18 7h1v1h-1zM19 7h1v1h-1zM21 7h1v1h-1zM22 7h1v1h-1zM24 7h1v1h-1zM27 7h1v1h-1zM28 7h1v1h-1zM30 7h1v1h-1zM32 7h1v1h-1zM33 7h1v1h-1zM34 7h1v1h-1zM36 7h1v1h-1zM4 8h1v1h-1zM6 8h1v1h-1zM7 8h1v1h-1zM8 8h1v1h-1zM10 8h1v1h-1zM12 8h1v1h-1zM16 8h1v1h-1zM17 8h1v1h-1zM18 8h1v1h-1zM22 8h1v1h-1zM23 8h1v1h-1zM24 8h1v1h-1zM25 8h1v1h-1zM26 8h1v1h-1zM27 8h1v1h-1zM30 8h1v1h-1zM32 8h1v1h-1zM33 8h1v1h-1zM34 8h1v1h-1zM36 8h1v1h-1zM4 9h1v1h-1zM10 9h1v1h-1zM12 9h1v1h-1zM13 9h1v1h-1zM15 9h1v1h-1zM18 9h1v1h-1zM20 9h1v1h-1zM21 9h1v1h-1zM22 9h1v1h-1zM23 9h1v1h-1zM26 9h1v1h-1zM30 9h1v1h-1zM36 9h1v1h-1zM4 10h1v1h-1zM5 10h1v1h-1zM6 10h1v1h-1zM7 10h1v1h-1zM8 10h1v1h-1zM9 10h1v1h-1zM10 10h1v1h-1zM12 10h1v1h-1zM14 10h1v1h-1zM16 10h1v1h-1zM18 10h1v1h-1zM20 10h1v1h-1zM22 10h1v1h-1zM24 10h1v1h-1zM26 10h1v1h-1zM28 10h1v1h-1zM30 10h1v1h-1zM31 10h1v1h-1zM32 10h1v1h-1zM33 10h1v1h-1zM34 10h1v1h-1zM35 10h1v1h-1zM36 10h1v1h-1zM12 11h1v1h-1zM13 11h1v1h-1zM14 11h1v1h-1zM18 11h1v1h-1zM19 11h1v1h-1zM20 11h1v1h-1zM21 11h1v1h-1zM25 11h1v1h-1zM26 11h1v1h-1zM27 11h1v1h-1zM4 12h1v1h-1zM8 12h1v1h-1zM10 12h1v1h-1zM11 12h1v1h-1zM12 12h1v1h-1zM14 12h1v1h-1zM15 12h1v1h-1zM20 12h1v1h-1zM21 12h1v1h-1zM23 12h1v1h-1zM24 12h1v1h-1zM25 12h1v1h-1zM26 12h1v1h-1zM29 12h1v1h-1zM30 12h1v1h-1zM31 12h1v1h-1zM32 12h1v1h-1zM33 12h1v1h-1zM36 12h1v1h-1zM7 13h1v1h-1zM11 13h1v1h-1zM14 13h1v1h-1zM16 13h1v1h-1zM17 13h1v1h-1zM18 13h1v1h-1zM19 13h1v1h-1zM22 13h1v1h-1zM27 13h1v1h-1zM29 13h1v1h-1zM33 13h1v1h-1zM34 13h1v1h-1zM35 13h1v1h-1zM4 14h1v1h-1zM5 14h1v1h-1zM7 14h1v1h-1zM10 14h1v1h-1zM11 14h1v1h-1zM12 14h1v1h-1zM14 14h1v1h-1zM16 14h1v1h-1zM19 14h1v1h-1zM21 14h1v1h-1zM25 14h1v1h-1zM26 14h1v1h-1zM27 14h1v1h-1zM29 14h1v1h-1zM30 14h1v1h-1zM33 14h1v1h-1zM35 14h1v1h-1zM4 15h1v1h-1zM5 15h1v1h-1zM9 15h1v1h-1zM11 15h1v1h-1zM13 15h1v1h-1zM18 15h1v1h-1zM19 15h1v1h-1zM21 15h1v1h-1zM22 15h1v1h-1zM24 15h1v1h-1zM25 15h1v1h-1zM26 15h1v1h-1zM5 16h1v1h-1zM6 16h1v1h-1zM7 16h1v1h-1zM10 16h1v1h-1zM15 16h1v1h-1zM17 16h1v1h-1zM18 16h1v1h-1zM19 16h1v1h-1zM22 16h1v1h-1zM23 16h1v1h-1zM24 16h1v1h-1zM28 16h1v1h-1zM30 16h1v1h-1zM32 16h1v1h-1zM33 16h1v1h-1zM36 16h1v1h-1zM4 17h1v1h-1zM5 17h1v1h-1zM12 17h1v1h-1zM14 17h1v1h-1zM16 17h1v1h-1zM17 17h1v1h-1zM20 17h1v1h-1zM23 17h1v1h-1zM25 17h1v1h-1zM27 17h1v1h-1zM29 17h1v1h-1zM31 17h1v1h-1zM33 17h1v1h-1zM34 17h1v1h-1zM4 18h1v1h-1zM7 18h1v1h-1zM10 18h1v1h-1zM13 18h1v1h-1zM16 18h1v1h-1zM17 18h1v1h-1zM20 18h1v1h-1zM23 18h1v1h-1zM25 18h1v1h-1zM26 18h1v1h-1zM27 18h1v1h-1zM29 18h1v1h-1zM30 18h1v1h-1zM31 18h1v1h-1zM32 18h1v1h-1zM33 18h1v1h-1zM35 18h1v1h-1zM4 19h1v1h-1zM6 19h1v1h-1zM7 19h1v1h-1zM9 19h1v1h-1zM15 19h1v1h-1zM16 19h1v1h-1zM18 19h1v1h-1zM21 19h1v1h-1zM23 19h1v1h-1zM24 19h1v1h-1zM25 19h1v1h-1zM28 19h1v1h-1zM29 19h1v1h-1zM30 19h1v1h-1zM32 19h1v1h-1zM33 19h1v1h-1zM8 20h1v1h-1zM9 20h1v1h-1zM10 20h1v1h-1zM13 20h1v1h-1zM16 20h1v1h-1zM18 20h1v1h-1zM19 20h1v1h-1zM21 20h1v1h-1zM25 20h1v1h-1zM26 20h1v1h-1zM27 20h1v1h-1zM30 20h1v1h-1zM32 20h1v1h-1zM35 20h1v1h-1zM4 21h1v1h-1zM5 21h1v1h-1zM7 21h1v1h-1zM11 21h1v1h-1zM12 21h1v1h-1zM14 21h1v1h-1zM15 21h1v1h-1zM17 21h1v1h-1zM19 21h1v1h-1zM21 21h1v1h-1zM25 21h1v1h-1zM27 21h1v1h-1zM33 21h1v1h-1zM34 21h1v1h-1zM35 21h1v1h-1zM5 22h1v1h-1zM6 22h1v1h-1zM8 22h1v1h-1zM10 22h1v1h-1zM13 22h1v1h-1zM14 22h1v1h-1zM15 22h1v1h-1zM18 22h1v1h-1zM19 22h1v1h-1zM20 22h1v1h-1zM22 22h1v1h-1zM24 22h1v1h-1zM27 22h1v1h-1zM28 22h1v1h-1zM30 22h1v1h-1zM31 22h1v1h-1zM33 22h1v1h-1zM35 22h1v1h-1zM5 23h1v1h-1zM8 23h1v1h-1zM9 23h1v1h-1zM11 23h1v1h-1zM13 23h1v1h-1zM14 23h1v1h-1zM15 23h1v1h-1zM17 23h1v1h-1zM19 23h1v1h-1zM23 23h1v1h-1zM26 23h1v1h-1zM27 23h1v1h-1zM29 23h1v1h-1zM31 23h1v1h-1zM4 24h1v1h-1zM5 24h1v1h-1zM7 24h1v1h-1zM10 24h1v1h-1zM11 24h1v1h-1zM13 24h1v1h-1zM14 24h1v1h-1zM15 24h1v1h-1zM16 24h1v1h-1zM17 24h1v1h-1zM20 24h1v1h-1zM23 24h1v1h-1zM26 24h1v1h-1zM28 24h1v1h-1zM30 24h1v1h-1zM31 24h1v1h-1zM32 24h1v1h-1zM33 24h1v1h-1zM36 24h1v1h-1zM4 25h1v1h-1zM5 25h1v1h-1zM6 25h1v1h-1zM9 25h1v1h-1zM11 25h1v1h-1zM17 25h1v1h-1zM18 25h1v1h-1zM22 25h1v1h-1zM23 25h1v1h-1zM24 25h1v1h-1zM25 25h1v1h-1zM27 25h1v1h-1zM28 25h1v1h-1zM29 25h1v1h-1zM31 25h1v1h-1zM33 25h1v1h-1zM35 25h1v1h-1zM6 26h1v1h-1zM9 26h1v1h-1zM10 26h1v1h-1zM12 26h1v1h-1zM15 26h1v1h-1zM17 26h1v1h-1zM18 26h1v1h-1zM19 26h1v1h-1zM21 26h1v1h-1zM22 26h1v1h-1zM24 26h1v1h-1zM27 26h1v1h-1zM28 26h1v1h-1zM32 26h1v1h-1zM33 26h1v1h-1zM34 26h1v1h-1zM35 26h1v1h-1zM6 27h1v1h-1zM7 27h1v1h-1zM8 27h1v1h-1zM12 27h1v1h-1zM13 27h1v1h-1zM14 27h1v1h-1zM15 27h1v1h-1zM17 27h1v1h-1zM18 27h1v1h-1zM19 27h1v1h-1zM20 27h1v1h-1zM21 27h1v1h-1zM22 27h1v1h-1zM25 27h1v1h-1zM26 27h1v1h-1zM27 27h1v1h-1zM29 27h1v1h-1zM30 27h1v1h-1zM32 27h1v1h-1zM36 27h1v1h-1zM4 28h1v1h-1zM5 28h1v1h-1zM8 28h1v1h-1zM9 28h1v1h-1zM10 28h1v1h-1zM11 28h1v1h-1zM14 28h1v1h-1zM15 28h1v1h-1zM20 28h1v1h-1zM21 28h1v1h-1zM23 28h1v1h-1zM25 28h1v1h-1zM26 28h1v1h-1zM27 28h1v1h-1zM28 28h1v1h-1zM29 28h1v1h-1zM30 28h1v1h-1zM31 28h1v1h-1zM32 28h1v1h-1zM12 29h1v1h-1zM13 29h1v1h-1zM15 29h1v1h-1zM16 29h1v1h-1zM17 29h1v1h-1zM18 29h1v1h-1zM19 29h1v1h-1zM20 29h1v1h-1zM28 29h1v1h-1zM32 29h1v1h-1zM34 29h1v1h-1zM4 30h1v1h-1zM5 30h1v1h-1zM6 30h1v1h-1zM7 30h1v1h-1zM8 30h1v1h-1zM9 30h1v1h-1zM10 30h1v1h-1zM12 30h1v1h-1zM14 30h1v1h-1zM18 30h1v1h-1zM19 30h1v1h-1zM21 30h1v1h-1zM24 30h1v1h-1zM25 30h1v1h-1zM26 30h1v1h-1zM28 30h1v1h-1zM30 30h1v1h-1zM32 30h1v1h-1zM33 30h1v1h-1zM4 31h1v1h-1zM10 31h1v1h-1zM17 31h1v1h-1zM18 31h1v1h-1zM20 31h1v1h-1zM21 31h1v1h-1zM22 31h1v1h-1zM24 31h1v1h-1zM25 31h1v1h-1zM28 31h1v1h-1zM32 31h1v1h-1zM35 31h1v1h-1zM4 32h1v1h-1zM6 32h1v1h-1zM7 32h1v1h-1zM8 32h1v1h-1zM10 32h1v1h-1zM12 32h1v1h-1zM15 32h1v1h-1zM16 32h1v1h-1zM17 32h1v1h-1zM18 32h1v1h-1zM22 32h1v1h-1zM24 32h1v1h-1zM28 32h1v1h-1zM29 32h1v1h-1zM30 32h1v1h-1zM31 32h1v1h-1zM32 32h1v1h-1zM33 32h1v1h-1zM35 32h1v1h-1zM36 32h1v1h-1zM4 33h1v1h-1zM6 33h1v1h-1zM7 33h1v1h-1zM8 33h1v1h-1zM10 33h1v1h-1zM13 33h1v1h-1zM14 33h1v1h-1zM15 33h1v1h-1zM16 33h1v1h-1zM17 33h1v1h-1zM18 33h1v1h-1zM20 33h1v1h-1zM23 33h1v1h-1zM26 33h1v1h-1zM28 33h1v1h-1zM30 33h1v1h-1zM31 33h1v1h-1zM32 33h1v1h-1zM33 33h1v1h-1zM35 33h1v1h-1zM4 34h1v1h-1zM6 34h1v1h-1zM7 34h1v1h-1zM8 34h1v1h-1zM10 34h1v1h-1zM14 34h1v1h-1zM17 34h1v1h-1zM18 34h1v1h-1zM20 34h1v1h-1zM23 34h1v1h-1zM29 34h1v1h-1zM30 34h1v1h-1zM31 34h1v1h-1zM32 34h1v1h-1zM33 34h1v1h-1zM34 34h1v1h-1zM4 35h1v1h-1zM10 35h1v1h-1zM13 35h1v1h-1zM14 35h1v1h-1zM17 35h1v1h-1zM21 35h1v1h-1zM23 35h1v1h-1zM24 35h1v1h-1zM25 35h1v1h-1zM28 35h1v1h-1zM29 35h1v1h-1zM4 36h1v1h-1zM5 36h1v1h-1zM6 36h1v1h-1zM7 36h1v1h-1zM8 36h1v1h-1zM9 36h1v1h-1zM10 36h1v1h-1zM12 36h1v1h-1zM15 36h1v1h-1zM16 36h1v1h-1zM18 36h1v1h-1zM19 36h1v1h-1zM20 36h1v1h-1zM21 36h1v1h-1zM24 36h1v1h-1zM25 36h1v1h-1zM27 36h1v1h-1zM28 36h1v1h-1zM29 36h1v1h-1zM36 36h1v1h-1z" fill="#000"/></svg><div><h3>Telefonla tara</h3><p>QR kodu okutarak siteyi hemen aç ve paylaş.</p></div></div>
+</div></footer>
+
+<a class="btn wa fab" href="https://wa.me/905521474311" target="_blank" rel="noopener" aria-label="WhatsApp ile sipariş ver">WhatsApp</a>
+
+<script>
+(function(){
+var NUM='905521474311';
+var f=document.getElementById('f'),send=document.getElementById('send'),sum=document.getElementById('sum');
+function build(){
+var p=f.querySelector('input[name=paket]:checked').value;
+var els=[].filter.call(f.querySelectorAll('input.ek:checked'),function(e){return e.value});var ek=els.map(function(e){return e.value});var tot=parseInt((p.match(/([\d.]+) TL/)||[0,'0'])[1].replace(/\./g,''),10);els.forEach(function(e){tot+=+e.dataset.p});var oldS=tot.toLocaleString('tr-TR')+' TL';var totS=Math.round(tot*0.8).toLocaleString('tr-TR')+' TL';
+var ad=document.getElementById('ad').value.trim();
+var is=document.getElementById('isletme').value.trim();
+var nt=document.getElementById('not').value.trim();
+var t='Merhaba, KRAW STUDIO’dan sipariş vermek istiyorum.\nPaket: '+p;
+if(ek.length)t+='\nEk hizmetler: '+ek.join(', ');t+='\nEski fiyat: '+oldS+'\n%20 indirimli fiyat: '+totS;
+if(ad)t+='\nAdım: '+ad;
+if(is)t+='\nİşletme: '+is;
+if(nt)t+='\nNot: '+nt;
+send.href='https://wa.me/'+NUM+'?text='+encodeURIComponent(t);
+sum.innerHTML='Eski fiyat: <s>'+oldS+'</s><br>%20 indirimli fiyat: <b style="color:var(--accent);font-size:22px">'+totS+'</b><br><small>%20 indirim uygulandı'+'</small>';
+}
+f.addEventListener('input',build);f.addEventListener('change',build);build();
+[].forEach.call(document.querySelectorAll('[data-ek]'),function(a){
+a.addEventListener('click',function(){document.getElementById(a.getAttribute('data-ek')).checked=true;build();});
+});
+[].forEach.call(document.querySelectorAll('[data-pick]'),function(a){
+a.addEventListener('click',function(){document.getElementById('r-'+a.getAttribute('data-pick')).checked=true;build();});
+});
+})();
+</script>
+<script>(function(){var c=document.getElementById("cnt");if(!c)return;var t0=performance.now(),D=3500;function f(n){var p=Math.min(1,(n-t0)/D);c.textContent=Math.round((1-Math.pow(1-p,3))*100);if(p<1)requestAnimationFrame(f)}requestAnimationFrame(f)})();</script>
+</body>
+</html>
+
